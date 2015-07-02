@@ -20,6 +20,20 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		// $this->load->view('welcome_message');
+		$this->home();
+	}
+
+	public function home()
+	{
+		$this->load->model('model_users');
+
+		$data['title'] = "MVC Cool Title"; //$title in VIERW
+		$data['page_header'] = "Intro to MVC Design";
+		$data['firstname'] = $this->model_users->getFirstNames();
+		$data['users'] = $this->model_users->getUsers();
+
+		$this->load->view('welcome_message',$data);
+
 	}
 }

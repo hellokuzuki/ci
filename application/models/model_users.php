@@ -1,5 +1,5 @@
 <?php 
-	class Model_users extends CI_Model {
+	class model_users extends CI_Model {
 		
 		function __construct() {
 			parent::__construct();
